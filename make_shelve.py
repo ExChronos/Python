@@ -1,7 +1,12 @@
-from people_base import bob, sue
 import shelve
+from mark import Person, Manager
 
-db = shelve.open('shelve-people')
-db['sue'] = sue
+bob = Person('Bob Smith', 42, 30000, 'Devops')
+sue = Person('Sue Storm', 38, 31000, 'Art Director')
+tom = Manager('Tom Clover', 31, 37000)
+
+db = shelve.open('shelve-class')
 db['bob'] = bob
+db['sue'] = sue
+db['tom'] = tom
 db.close()
